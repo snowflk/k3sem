@@ -5,6 +5,8 @@ cluster:
   password: changme
   usergroup: k3scluster
   token: acb6d54e-6669-4c89-9cd5-b52fa27cd1b5
+  noDeploy:
+  - local-storage
   nodes:
   - ip: 192.168.0.11
     hostname: k3s-node-1
