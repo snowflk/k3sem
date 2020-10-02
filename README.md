@@ -7,7 +7,14 @@ Install the OS, enable SSH. Then k3sem will do the rest.
 
 ![](usage.gif)
 
-You need to create `config.yaml` to tell k3s how to install your cluster
+## Installation & Usage
+
+Get k3sem
+```bash
+git clone https://github.com/hybristix/k3sem.git
+```
+
+Then you need to modify `config.yaml` to tell k3s how to install your cluster
 
 Example `config.yaml`
 ```yaml
@@ -15,9 +22,11 @@ domain: k3s.example.com
 
 cluster:
   user: k3s
-  password: <your password>
+  password: changeme
   usergroup: k3scluster
   token: my-secret-token
+  noDeploy:
+  - local-storage
   nodes:
   - ip: 192.168.0.11
     hostname: k3s-node-1
@@ -27,6 +36,7 @@ cluster:
       # Enable ssh login with identity file
       authorizedKey: /home/myuser/.ssh/id_rsa.pub
       privateKey: /home/myuser/.ssh/id_rsa
+    # allow user k3s to use GPIO on raspberry pi
     raspiGpio: true
 
   - ip: 192.168.0.12
