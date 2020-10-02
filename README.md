@@ -32,6 +32,7 @@ cluster:
     hostname: k3s-node-1
     role: master
     ssh:
+      # user for the first login
       user: ubuntu
       # Enable ssh login with identity file
       authorizedKey: /home/myuser/.ssh/id_rsa.pub
