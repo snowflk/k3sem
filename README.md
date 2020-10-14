@@ -11,7 +11,7 @@ Install the OS, enable SSH. Then k3sem will do the rest.
 
 Get k3sem
 ```bash
-git clone https://github.com/hybristix/k3sem.git
+git clone https://github.com/snowflk/k3sem.git
 ```
 
 Then you need to modify `config.yaml` to tell k3s how to install your cluster
